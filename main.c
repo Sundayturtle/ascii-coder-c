@@ -12,7 +12,7 @@ int main(void) {
     char* path_mod = "mod.cfg";
     char data[] = "Hello from STURTLE";
     int inter_mod = 10;
-    int use_data = TRUE; // will be previously set values changed to new? default > TRUE
+    /* int use_data = TRUE; // will be previously set values changed to new? default > TRUE */ //will appear in the future
     int mod_able = TRUE; // on / off modifier
     int generate = TRUE;
     // Another variables
@@ -26,14 +26,6 @@ int main(void) {
 
     ASCII_coder(path, data, data_el, modifier_array, mod_able);
     ASCII_reader(path, data_el, modifier_array, mod_able);
-
-
-    /* printf("data count = %d\n", data_el);
-    *     for (int i = 0; i < data_el; i++) {
-        printf("\nel[%d] = %d ", i + 1, modifier_array[i]);
-    }
-    printf("\n");
-     */
 
     free(modifier_array);
     return 0;
