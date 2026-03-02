@@ -33,7 +33,6 @@ The program will:
 In main.c you can change:
 ```bash
 char data[] = "Hello from STURTLE"; // text to encode
-int use_data = TRUE;                // use previously saved modifier
 int mod_able = TRUE;                // enable or disable modifier
 int generate = TRUE;                // generate a new modifier
 ```
