@@ -39,5 +39,7 @@ int main(void) {
 
 
     free(modifier_array);
+    free(path);
+    free(buf_data);
     return 0;
 }
