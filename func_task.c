@@ -41,7 +41,7 @@ void random_mod(int dat_el, int mod_arr[], const char* path) {
 }
 
 // Main encoder, encrypts using the ASCII table, dots mark the end of a character. Rewrites the string into data.dat.
-void ASCII_coder(const char* path, char data[], int dat_el, int mod_arr[], int mod_able) {
+void ASCII_coder(const char* path, char data[], int dat_el, int mod_arr[]) {
     FILE* f = fopen(path, "w"); is_file_open(f);
     for (int i = 0; i < dat_el; i++) {
         int c = data[i];
