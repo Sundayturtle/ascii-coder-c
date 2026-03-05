@@ -29,8 +29,9 @@ int main(void) {
     int* modifier_array = malloc(sizeof(int) * fsize);
     if (!modifier_array) return 1;
 
-    if (generate || is_file_empty(path_mod))  random_mod(data_el, modifier_array, path_mod);
-    else mod_reader(data_el, modifier_array, path_mod);
+    if (is_file_empty(path_mod))  random_mod(fsize, modifier_array, path_mod);
+    else mod_reader(fsize, modifier_array, path_mod);
+
 
     ASCII_coder(path, data, data_el, modifier_array, mod_able);
     ASCII_reader(path, data_el, modifier_array, mod_able);
