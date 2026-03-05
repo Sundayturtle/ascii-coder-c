@@ -33,8 +33,10 @@ int main(void) {
     else mod_reader(fsize, modifier_array, path_mod);
 
 
-    ASCII_coder(path, data, data_el, modifier_array, mod_able);
-    ASCII_reader(path, data_el, modifier_array, mod_able);
+    ASCII_coder(path_mod, buf_data, fsize, modifier_array);
+    ASCII_reader(path_mod, fsize, modifier_array);
+
+
 
     free(modifier_array);
     return 0;
