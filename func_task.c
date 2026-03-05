@@ -51,7 +51,7 @@ void ASCII_coder(const char* path, char data[], int dat_el, int mod_arr[], int m
     fclose(f);
 }
 // Reads from data.dat. All characters until a dot are converted into a number, then the last dot is returned back to the stream
-void ASCII_reader(const char* path, int dat_el, int mod_arr[], int mod_able) {
+void ASCII_reader(const char* path, int dat_el, int mod_arr[]) {
     FILE* f = fopen(path, "r"); is_file_open(f);
     int c, i = 0;
     do {
