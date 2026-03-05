@@ -45,7 +45,7 @@ void ASCII_coder(const char* path, char data[], int dat_el, int mod_arr[]) {
     FILE* f = fopen(path, "w"); is_file_open(f);
     for (int i = 0; i < dat_el; i++) {
         int c = data[i];
-        if (mod_able == TRUE) c -= mod_arr[i];
+        c -= mod_arr[i];
         fprintf(f, ".%d", c);
     }
     fclose(f);
