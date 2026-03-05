@@ -7,18 +7,26 @@
 #define FALSE 0
 
 int main(void) {
-    // Main settings (user friendly)
-    char* path = "data.dat";
-    char* path_mod = "mod.cfg";
-    char data[] = "Hello from STURTLE";
-    int inter_mod = 10;
-    /* int use_data = TRUE; // will be previously set values changed to new? default > TRUE */ //will appear in the future
-    int mod_able = TRUE; // on / off modifier
-    int generate = TRUE;
-    // Another variables
-    srand(time(NULL) - inter_mod);
-    int data_el = sizeof(data) / sizeof(char) - 1;
-    int* modifier_array = malloc(sizeof(int) * data_el);
+    char *path;
+    path = (char*)malloc(sizeof(char) * 100);
+    scanf("%99s", path);
+    FILE *f = fopen(path, "rb");
+    fseek(f, 0, SEEK_END);
+    long fsize = ftell(f);
+    rewind(f);
+
+    char *buf_data = malloc(fsize + 1);
+    fread(buf_data, 1, fsize, f);
+    buf_data[fsize] = '\0';
+
+    // for (int i = 0; i < fsize; i++) {
+    //     printf("%c", buf_data[i]);
+    // }
+
+
+    char* path_mod = "encoded.dat";
+    srand((unsigned int)time(NULL));
+    int* modifier_array = malloc(sizeof(int) * fsize);
     if (!modifier_array) return 1;
 
     if (generate || is_file_empty(path_mod))  random_mod(data_el, modifier_array, path_mod);
