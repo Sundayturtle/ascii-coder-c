@@ -22,7 +22,7 @@ int main(void) {
     // for (int i = 0; i < fsize; i++) {
     //     printf("%c", buf_data[i]);
     // }
-    
+
 
 
     char* path_mod = "encoded.dat";

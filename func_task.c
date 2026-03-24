@@ -61,8 +61,7 @@ void ASCII_reader(const char* path, int dat_el, int mod_arr[]) {
             while ((c = fgetc(f)) >= '0' && c <= '9') {
                 num = num * 10 + (c - '0');
             }
-            if (mod_able == TRUE && i < dat_el)
-                num += mod_arr[i];
+            num += mod_arr[i];
             i++;
             if (c != EOF) ungetc(c, f);
             printf("%c", num);
